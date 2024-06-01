@@ -1,6 +1,5 @@
 import '../helpers/sql_helper.dart';
 import '../widgets/grid_view_item.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sizer/sizer.dart';
@@ -136,11 +135,7 @@ class _HomePageState extends State<HomePage> {
             backgroundColor: Theme.of(context).primaryColor,
             pinned: false,
             bottom: PreferredSize(
-              preferredSize: Size(
-                20.h,
-                100.w,
-                // MediaQuery.of(context).size.height / 3 + (kIsWeb ? 40 : 0),
-              ),
+              preferredSize: Size(10.h, 80.w),
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
