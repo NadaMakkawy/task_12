@@ -2,6 +2,7 @@ import '../helpers/sql_helper.dart';
 import '../pages/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:sizer/sizer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,25 +21,30 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Easy Pos',
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xff0157db),
-          foregroundColor: Colors.white,
-        ),
-        colorScheme: ColorScheme.fromSwatch(
-          errorColor: Colors.red,
-          cardColor: Colors.blue.shade100,
-          backgroundColor: Colors.white,
-          primarySwatch: getMaterialColor(
-            const Color(0xff0157db),
+    return Sizer(
+      builder: (BuildContext context, Orientation orientation,
+          DeviceType deviceType) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Easy Pos',
+          theme: ThemeData(
+            appBarTheme: const AppBarTheme(
+              backgroundColor: Color(0xff0157db),
+              foregroundColor: Colors.white,
+            ),
+            colorScheme: ColorScheme.fromSwatch(
+              errorColor: Colors.red,
+              cardColor: Colors.blue.shade100,
+              backgroundColor: Colors.white,
+              primarySwatch: getMaterialColor(
+                const Color(0xff0157db),
+              ),
+            ),
+            useMaterial3: true,
           ),
-        ),
-        useMaterial3: true,
-      ),
-      home: const HomePage(),
+          home: const HomePage(),
+        );
+      },
     );
   }
 

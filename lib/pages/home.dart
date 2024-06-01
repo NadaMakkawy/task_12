@@ -3,6 +3,7 @@ import '../widgets/grid_view_item.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:sizer/sizer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -132,13 +133,13 @@ class _HomePageState extends State<HomePage> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight:
-                MediaQuery.of(context).size.height / 3 + (kIsWeb ? 40 : 0),
             backgroundColor: Theme.of(context).primaryColor,
             pinned: false,
             bottom: PreferredSize(
-              preferredSize: Size.fromHeight(
-                MediaQuery.of(context).size.height / 3 + (kIsWeb ? 40 : 0),
+              preferredSize: Size(
+                20.h,
+                100.w,
+                // MediaQuery.of(context).size.height / 3 + (kIsWeb ? 40 : 0),
               ),
               child: Padding(
                 padding:
